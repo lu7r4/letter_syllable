@@ -1,0 +1,1 @@
+Example SPA to ReactJS.
