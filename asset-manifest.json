@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/letter_syllable/static/css/main.8bfd6651.css",
+    "main.js": "/letter_syllable/static/js/main.1013478d.js",
+    "static/media/win.gif": "/letter_syllable/static/media/win.f53f9dcba43c96cdb6d7.gif",
+    "index.html": "/letter_syllable/index.html",
+    "main.8bfd6651.css.map": "/letter_syllable/static/css/main.8bfd6651.css.map",
+    "main.1013478d.js.map": "/letter_syllable/static/js/main.1013478d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bfd6651.css",
+    "static/js/main.1013478d.js"
+  ]
+}
