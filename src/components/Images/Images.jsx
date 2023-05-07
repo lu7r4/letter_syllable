@@ -1,9 +1,17 @@
 function Image() {
-    return (
-        <div className="image">
-                <img src="https://abali.ru/wp-content/uploads/2020/03/hlopushka-animation-gif-Party-Popper.gif" alt="animated image" />
-        </div>
-    );
+    const handleClick = () => {
+        window.location.reload();
+      }
+  
+  return (
+    <div className="image">
+      <div className='img'>
+        <button className='btn' onClick={handleClick}>
+          ещё раз
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export {Image}; 

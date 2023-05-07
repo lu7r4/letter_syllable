@@ -4,15 +4,21 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url('./img/bcg_main.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-color: rgba(251,181,75,0.7);
   height: 100vh;
 }
 #root {
   width: 100%;
 }
+.main {
+  height: 100%;
+  margin: 0 auto;
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+/* верняя часть с ссылками на переклчения между станицами */
 .header {
   display: block;
   top: 0;
@@ -28,24 +34,25 @@ body {
 .header p {
   text-align: center;
 }
-
+.routes {
+  height: 100%;
+  flex-grow: 90%;
+}
 .about {
   width: 100%;
   height: 100%;
   padding: 10px 0;
   color: #150101;
 }
-
 .about__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
   font-size: 26px;
 }
 li {
-  width: 33%;
-  padding: 5px 20px;
+  width: 49%;
+  padding: 5px 0;
   border: 1px solid #000;
   border-radius: 10px;
   background-color: rgb(232, 243, 252);
@@ -64,94 +71,74 @@ li, a {
   color: inherit;
   border-radius: 8px;
 }
-
-
 li:hover {
   cursor: pointer;
   background-color: rgb(232, 243, 252);
   box-shadow: 0 5px 10px rgba(83, 135, 180, 0.7);
-
 }
 li:focus {
   background-color: rgb(232, 243, 252);
   box-shadow: 0 5px 3px rgba(83, 135, 180, 0.7);
 }
-.dashboard {
-  width: 70%;
-  margin: 0 auto;
-  font-size: 26px;
-  text-align: center;
-}
+
+/* картинка-анимация в случае победы */
 .image {
-  width: 550px;
-  margin: 0 auto;
+  top: 0;
+  position: absolute;
+  z-index: 3;
 }
-.title_sounds {
+.img {
+  width: 1640px;
+  height: 910px;
+  background-image: url('./components/Images/win.gif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: fadeIn 1s ease-out forwards;
+}
+.image button {
+  position: absolute;
+  opacity: 1;
+  width: 300px;
+  padding: 10px;
+  top: 85%;
+  left: 42%;
+}
+@keyframes fadeIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    width: 820px;
+    height: 455px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 1640px;
+    height: 910px;
+    opacity: 1;
+  }
+}
+/* разметка заголовка при выборе вида звука - на данный момент не используется в приложении */
+/*.title_sounds {
   padding: 0px 0 10px;
   text-align: center;
   text-transform: uppercase;
   font-size: 26px;
-}
-.description_sounds {
-  display: block;
-  text-align: center;
-  font-size: 20px;
-  text-transform: uppercase;
-}
-.description_sounds span {
-  text-align: center;
-  
-}
-.randomLetters {
+}*/
+.wrapper {
   display: flex;
   flex-direction: column;
-  min-width: 800px;
   width: 100%;
-  height: 100%;
-  background-color: #fff;
-}
-
-.letters {
-  margin: 20px 0 30px;
-  padding: 10px;
-  margin: 0 auto 20px;
-  width: 800px;
-  height: 400px;
-  display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
 }
-.letters_words {
-  margin: 60px 0 30px;
-  padding: 10px;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-transform: uppercase;
-}
-.plus {
-  font-size: 110px;
-}
-.myButtonGroup > button {
-  color: rgb(6, 1, 1);
-  background-color: rgb(240, 248, 255);
-  font-size: 1.8em;
-  text-transform: uppercase;
-  padding: 3% 10%;
-  width: 100%;
-  display: block;
-  margin: 15px auto;
-  border-radius: 10px;
-  box-shadow: 0 5px 3px rgb(138, 155, 170, .6);
-  transition: all 0.2s ease-in;
-  cursor: pointer;
-}
+/* разметка кнопок - по тегу, класс опционально в зависимости от требований к кнопке */
 .btn {
   color: rgb(6, 1, 1);
-  background-color: rgb(240, 248, 255);
+  background-color: rgb(232, 243, 252);
   font-size: 1.8em;
   text-transform: uppercase;
   padding: 1% 10%;
@@ -164,180 +151,38 @@ li:focus {
   cursor: pointer;
 }
 button:hover {
-  background-color: rgb(232, 243, 252);
+  background-color: rgba(246,157,67, 0.6);
   box-shadow: 0 5px 3px rgba(83, 135, 180, 0.7);
 }
 button:active {
-  background-color: #6bccf9;
+  background-color: rgb(246,157,67);
   box-shadow: 0 5px 5px rgba(83, 135, 180, 0.7);
-
 }
-
-.count {
-  font-size: 40px;
-  text-align: center;
-  height: 50px;
-  width: 60px;
-  border: 1px solid #000;
-}
-
-.main {
-  height: 100%;
-  margin: 30px auto;
-  width: 1400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.aboutt {
-  height: 100%;
-
-  flex-grow: 10%;
-}
-.routes {
-  height: 100%;
-
-  flex-grow: 90%;
-}
-.progress_counter {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.counter_flex {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.counter_item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-
-
-
-
-.card {
-  font-size: 36px;
-
-  box-shadow: 2px 2px 15px #706e6e;
-  position: relative;
-  border-radius: 8px;
-  min-width: 300px;
-  height: 350px;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
-.card_l {
-  font-size: 36px;
-
-  box-shadow: 2px 2px 15px #706e6e;
-  position: relative;
-  border-radius: 8px;
-  min-width: 400px;
-  height: 300px;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
-
-
-.consonant .front,
-.consonant .back,
-.vowels .front,
-.vowels .back {
-  padding: 20px;
-  position: absolute;
-  height: 350px;
-  backface-visibility: hidden;
-  border-radius: 8px;
-  min-width: 300px;
-  border: 1px solid #0c0ce7;
-  font-size: 260px;
-  text-align: center;
-  background-color: aliceblue;
-}
-.consonant_l .front,
-.consonant_l .back {
-  position: absolute;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 8px;
-  min-width: 231px;
-  border: 1px solid #0c0ce7;
-  font-size: 240px;
-  text-align: center;
-  background-color: aliceblue;
-}
-
-
-.letter_word {
-  width: 400px;
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-.flipped {
-  transform: rotateY(180deg);
-}
-
-
-.container2 {
-  border: 1px solid #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.btn {
-  margin-bottom: 1rem;
-}
-
-.thumb {
-  
-}
-
-.wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.buttons {
-flex-grow: 10%;
-}
-
-.cards {
-  flex-grow: 90%;
-  width: 1100px;
-
-}
-.threeLetter {
-  display: flex;
-  align-items: center;
-}
-
-.one {
-  width: 200px;
-  height: 300px;
-  border: 1px solid #000;
-}
-.two {
-  width: 200px;
-  height: 300px;
-  border: 1px solid red;
-
-}
-
-.btn_flex {
+.buttons_letters {
+  width: 1440px;
   display: flex;
   flex-wrap: wrap;
 }
-.btn_flex > button {
+.buttons_letters > button {
+  color: rgb(6, 1, 1);
+  background-color: rgb(240, 248, 255);
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 1% 2%;
+  width: 20%;
+  display: block;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 3px rgb(138, 155, 170, .6);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+.btn_syllable_flex {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn_syllable_flex > button {
   width: 250px;
 }
 .btn_syllable {
@@ -345,7 +190,7 @@ flex-grow: 10%;
   background-color: rgb(240, 248, 255);
   font-size: 1.8em;
   text-transform: uppercase;
-  padding: 1% 10%;
+  padding: 0.5% 10%;
   width: 100%;
   display: block;
   margin: 3px auto 0;
@@ -353,4 +198,144 @@ flex-grow: 10%;
   box-shadow: 0 5px 3px rgb(138, 155, 170, .6);
   transition: all 0.2s ease-in;
   cursor: pointer;
+}
+.btn_els {
+  padding: 15px;
+  margin: 37px auto 0;
+}
+.btn_syllable.active {
+  background-color: rgb(246,157,67);
+}
+/* карточки слогов */
+.random_letters {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  height: 700px;
+  background-color: #fff;
+}
+/* описание - какие звуки мы изучаем */
+.description_sounds {
+  margin: 10px;
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.description_sounds span {
+  display: block;
+  margin: 10px;
+  text-align: center;
+  font-weight: normal;
+}
+/* прогресс бар со счетчиком */
+.progress_counter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.counter_flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.count {
+  font-size: 40px;
+  text-align: center;
+  height: 50px;
+  width: 60px;
+  border: 1px solid #000;
+}
+/* карточки слогов */
+.letters {
+  margin: 0 auto 10px ;
+  padding: 10px;
+  width: 800px;
+  height: 490px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+}
+/* основная разметка для согласных и гласных букв в карточке */
+.consonant .front,
+.consonant .back,
+.vowels .front,
+.vowels .back {
+  padding: 0;
+  position: absolute;
+  height: 450px;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  min-width: 300px;
+  border: 1px solid #0c0ce7;
+  font-size: 350px;
+  text-align: center;
+  background-color: aliceblue;
+}
+/* переворот карточки */
+.flipped {
+  transform: rotateY(180deg);
+}
+.back {
+  transform: rotateY(180deg);
+}
+.card {
+  font-size: 36px;
+  box-shadow: 2px 2px 15px #706e6e;
+  position: relative;
+  border-radius: 8px;
+  min-width: 300px;
+  height: 450px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+/* плюс - для слогоа и для слов */
+.plus {
+  font-size: 110px;
+}
+/* карточки слов - состоящих из слогов */
+.words {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 630px;
+}
+.syllables {
+  margin: 60px 0 30px;
+  padding: 10px;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+}
+/* разметка слога */
+.syllable .front,
+.syllable .back {
+  position: absolute;
+  padding: 70px 50px 70px;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  min-width: 502px;
+  border: 1px solid #0c0ce7;
+  font-size: 230px;
+  text-align: center;
+  background-color: aliceblue;
+}
+.card_syllable {
+  font-size: 36px;
+  box-shadow: 2px 2px 15px #706e6e;
+  position: relative;
+  border-radius: 8px;
+  min-width: 502px;
+  height: 450px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.letter_word {
+  width: 400px;
 }
