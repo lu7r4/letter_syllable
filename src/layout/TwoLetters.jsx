@@ -235,7 +235,7 @@ return (
           </button>
       </div>
 {/* карточки с буквами */}
-        <div className="random_letters">
+        <div className="random_letters ">
 {/* описание - какие звуки сейчас изучаем */}
             <div className="description_sounds">
               Автоматизируем согласные:&nbsp;<br></br>

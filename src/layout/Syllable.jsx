@@ -145,7 +145,7 @@ function RandomItem() {
         ))}
       </div>
 {/* карточки с буквами */}
-      <div className="random_letters">
+      <div className="random_letters syl">
 {/* прогресс бар со счетчиком */}
         <div className="progress_counter">
           <div className="counter_flex">
