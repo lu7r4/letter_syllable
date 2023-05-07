@@ -4,6 +4,7 @@ function Image() {
       }
   
   return (
+
     <div className="image">
       <div className='img'>
         <button className='btn' onClick={handleClick}>

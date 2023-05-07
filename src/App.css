@@ -168,7 +168,7 @@ button:active {
   background-color: rgb(240, 248, 255);
   font-size: 1.5em;
   text-transform: uppercase;
-  padding: 1% 2%;
+  padding: 2px 2%;
   width: 20%;
   display: block;
   margin: 15px auto;
